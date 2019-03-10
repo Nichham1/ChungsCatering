@@ -1,6 +1,6 @@
 ﻿namespace ChungsCatering
 {
-    partial class Form2
+    partial class AdminLoginForm
     {
         /// <summary>
         /// Required designer variable.

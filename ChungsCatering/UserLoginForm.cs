@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ChungsCatering
 {
-    public partial class Form1 : Form
+    public partial class UserLoginForm : Form
     {
-        public Form1()
+        public UserLoginForm()
         {
             InitializeComponent();
         }
