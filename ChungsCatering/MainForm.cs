@@ -25,7 +25,9 @@ namespace ChungsCatering
         {
             AdminLoginForm adminlog = new AdminLoginForm();
             adminlog.MdiParent = this;
-            adminlog.Show(); 
+            adminlog.Show();
+            isloggedin = true;
+            isadmin = true;
         }
 
         public void Userloginshow()
@@ -33,25 +35,24 @@ namespace ChungsCatering
             UserLoginForm userlog = new UserLoginForm();
             userlog.MdiParent = this;
             userlog.Show();
+            isloggedin = true;
+            iscustomer = true;
         }
 
-        private void CustomerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
-            if (isadmin && iscustomer == true)
-            {
+        private void Order_Click(object sender, EventArgs e)
+        {
+            if (iscustomer == false){
+
+                Userloginshow();
+            }
+            else{ 
 
                 OrderForm order = new OrderForm();
                 order.MdiParent = this;
                 order.Show();
             }
-           
-        }
 
-        private void AdminToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            Adminloginshow();
 
         }
     }
