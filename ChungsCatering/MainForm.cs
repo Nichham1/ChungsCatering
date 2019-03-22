@@ -50,8 +50,8 @@ namespace ChungsCatering
 
         private void AdminToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
 
+            Adminloginshow();
 
         }
     }
