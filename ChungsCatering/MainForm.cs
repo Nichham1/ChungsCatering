@@ -29,7 +29,13 @@ namespace ChungsCatering
         {
             
 
+        }
 
+        private void Reservation_Click(object sender, EventArgs e)
+        {
+            ReservationForm reservation = new ReservationForm();
+            reservation.MdiParent = this;
+            reservation.Show();
         }
     }
 }
