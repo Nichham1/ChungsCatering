@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrdersReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdersReports.Designer.cs">
+      <DependentUpon>OrdersReports.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReservationForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReservationForm.Designer.cs">
       <DependentUpon>ReservationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReservationReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReservationReports.Designer.cs">
+      <DependentUpon>ReservationReports.cs</DependentUpon>
     </Compile>
     <Compile Include="UserLoginForm.cs">
       <SubType>Form</SubType>
@@ -87,6 +99,9 @@
     <EmbeddedResource Include="OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OrdersReports.resx">
+      <DependentUpon>OrdersReports.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -98,6 +113,9 @@
     </Compile>
     <EmbeddedResource Include="ReservationForm.resx">
       <DependentUpon>ReservationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReservationReports.resx">
+      <DependentUpon>ReservationReports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserLoginForm.resx">
       <DependentUpon>UserLoginForm.cs</DependentUpon>
