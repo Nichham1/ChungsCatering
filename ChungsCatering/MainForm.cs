@@ -17,17 +17,41 @@ namespace ChungsCatering
             InitializeComponent();
         }
 
-        private void CustomerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OrderForm order = new OrderForm();
-            order.MdiParent = this;
-            order.Show();
+        Boolean isloggedin = false;
+        Boolean isadmin = false;
+        Boolean iscustomer = false;
 
+        public void Adminloginshow()
+        {
+            AdminLoginForm adminlog = new AdminLoginForm();
+            adminlog.MdiParent = this;
+            adminlog.Show();
+            isloggedin = true;
+            isadmin = true;
         }
 
-        private void AdminToolStripMenuItem_Click(object sender, EventArgs e)
+        public void Userloginshow()
         {
-            
+            UserLoginForm userlog = new UserLoginForm();
+            userlog.MdiParent = this;
+            userlog.Show();
+            isloggedin = true;
+            iscustomer = true;
+        }
+
+
+        private void Order_Click(object sender, EventArgs e)
+        {
+            if (iscustomer == false){
+
+                Userloginshow();
+            }
+            else{ 
+
+                OrderForm order = new OrderForm();
+                order.MdiParent = this;
+                order.Show();
+            }
 
         }
 
