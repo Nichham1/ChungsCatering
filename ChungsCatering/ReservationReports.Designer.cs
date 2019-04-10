@@ -35,23 +35,25 @@
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.lbReservationSearch = new System.Windows.Forms.Label();
             this.txtSearchReservation = new System.Windows.Forms.TextBox();
-            this.dataGridViewRes = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.gvUsers = new System.Windows.Forms.DataGridView();
             this.lnTableStatus = new System.Windows.Forms.Label();
-            this.txtReservationDate = new System.Windows.Forms.TextBox();
             this.lbReservationDate = new System.Windows.Forms.Label();
-            this.txtStatus = new System.Windows.Forms.TextBox();
             this.lbResStatus = new System.Windows.Forms.Label();
-            this.txtCusAddress = new System.Windows.Forms.TextBox();
+            this.tbCusAddress = new System.Windows.Forms.TextBox();
             this.lbCusAddress = new System.Windows.Forms.Label();
-            this.txtReservations = new System.Windows.Forms.TextBox();
             this.lbReservation = new System.Windows.Forms.Label();
-            this.txtTelephone = new System.Windows.Forms.TextBox();
+            this.tbTelephone = new System.Windows.Forms.TextBox();
             this.lbTelephone = new System.Windows.Forms.Label();
-            this.txtLName = new System.Windows.Forms.TextBox();
-            this.txtFName = new System.Windows.Forms.TextBox();
+            this.tbLastName = new System.Windows.Forms.TextBox();
+            this.tbFirstName = new System.Windows.Forms.TextBox();
             this.lbCustomerFName = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRes)).BeginInit();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.tbEmailAddress = new System.Windows.Forms.TextBox();
+            this.cbResDescription = new System.Windows.Forms.ComboBox();
+            this.cbTableStatus = new System.Windows.Forms.ComboBox();
+            this.cbResStatus = new System.Windows.Forms.ComboBox();
+            this.dtpReservation = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.gvUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // btClearRes
@@ -63,6 +65,7 @@
             this.btClearRes.TabIndex = 49;
             this.btClearRes.Text = "Clear Orders";
             this.btClearRes.UseVisualStyleBackColor = true;
+            this.btClearRes.Click += new System.EventHandler(this.BtClearRes_Click);
             // 
             // btDeleteRes
             // 
@@ -117,68 +120,47 @@
             this.txtSearchReservation.Size = new System.Drawing.Size(293, 20);
             this.txtSearchReservation.TabIndex = 43;
             // 
-            // dataGridViewRes
+            // gvUsers
             // 
-            this.dataGridViewRes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewRes.Location = new System.Drawing.Point(371, 222);
-            this.dataGridViewRes.Name = "dataGridViewRes";
-            this.dataGridViewRes.Size = new System.Drawing.Size(553, 392);
-            this.dataGridViewRes.TabIndex = 42;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(13, 167);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 20);
-            this.textBox1.TabIndex = 41;
+            this.gvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvUsers.Location = new System.Drawing.Point(371, 222);
+            this.gvUsers.Name = "gvUsers";
+            this.gvUsers.Size = new System.Drawing.Size(553, 392);
+            this.gvUsers.TabIndex = 42;
             // 
             // lnTableStatus
             // 
             this.lnTableStatus.AutoSize = true;
             this.lnTableStatus.Location = new System.Drawing.Point(10, 151);
             this.lnTableStatus.Name = "lnTableStatus";
-            this.lnTableStatus.Size = new System.Drawing.Size(68, 13);
+            this.lnTableStatus.Size = new System.Drawing.Size(67, 13);
             this.lnTableStatus.TabIndex = 40;
-            this.lnTableStatus.Text = "Stock Status";
-            // 
-            // txtReservationDate
-            // 
-            this.txtReservationDate.Location = new System.Drawing.Point(189, 103);
-            this.txtReservationDate.Name = "txtReservationDate";
-            this.txtReservationDate.Size = new System.Drawing.Size(167, 20);
-            this.txtReservationDate.TabIndex = 39;
+            this.lnTableStatus.Text = "Table Status";
             // 
             // lbReservationDate
             // 
             this.lbReservationDate.AutoSize = true;
             this.lbReservationDate.Location = new System.Drawing.Point(186, 87);
             this.lbReservationDate.Name = "lbReservationDate";
-            this.lbReservationDate.Size = new System.Drawing.Size(59, 13);
+            this.lbReservationDate.Size = new System.Drawing.Size(90, 13);
             this.lbReservationDate.TabIndex = 38;
-            this.lbReservationDate.Text = "Order Date";
-            // 
-            // txtStatus
-            // 
-            this.txtStatus.Location = new System.Drawing.Point(189, 167);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(167, 20);
-            this.txtStatus.TabIndex = 37;
+            this.lbReservationDate.Text = "Reservation Date";
             // 
             // lbResStatus
             // 
             this.lbResStatus.AutoSize = true;
             this.lbResStatus.Location = new System.Drawing.Point(186, 151);
             this.lbResStatus.Name = "lbResStatus";
-            this.lbResStatus.Size = new System.Drawing.Size(78, 13);
+            this.lbResStatus.Size = new System.Drawing.Size(97, 13);
             this.lbResStatus.TabIndex = 36;
-            this.lbResStatus.Text = "Delivery Status";
+            this.lbResStatus.Text = "Reservation Status";
             // 
-            // txtCusAddress
+            // tbCusAddress
             // 
-            this.txtCusAddress.Location = new System.Drawing.Point(656, 43);
-            this.txtCusAddress.Name = "txtCusAddress";
-            this.txtCusAddress.Size = new System.Drawing.Size(252, 20);
-            this.txtCusAddress.TabIndex = 35;
+            this.tbCusAddress.Location = new System.Drawing.Point(656, 43);
+            this.tbCusAddress.Name = "tbCusAddress";
+            this.tbCusAddress.Size = new System.Drawing.Size(252, 20);
+            this.tbCusAddress.TabIndex = 35;
             // 
             // lbCusAddress
             // 
@@ -189,28 +171,21 @@
             this.lbCusAddress.TabIndex = 34;
             this.lbCusAddress.Text = "Customer Address";
             // 
-            // txtReservations
-            // 
-            this.txtReservations.Location = new System.Drawing.Point(13, 103);
-            this.txtReservations.Name = "txtReservations";
-            this.txtReservations.Size = new System.Drawing.Size(167, 20);
-            this.txtReservations.TabIndex = 33;
-            // 
             // lbReservation
             // 
             this.lbReservation.AutoSize = true;
             this.lbReservation.Location = new System.Drawing.Point(13, 87);
             this.lbReservation.Name = "lbReservation";
-            this.lbReservation.Size = new System.Drawing.Size(38, 13);
+            this.lbReservation.Size = new System.Drawing.Size(120, 13);
             this.lbReservation.TabIndex = 32;
-            this.lbReservation.Text = "Orders";
+            this.lbReservation.Text = "Reservation Description";
             // 
-            // txtTelephone
+            // tbTelephone
             // 
-            this.txtTelephone.Location = new System.Drawing.Point(448, 43);
-            this.txtTelephone.Name = "txtTelephone";
-            this.txtTelephone.Size = new System.Drawing.Size(167, 20);
-            this.txtTelephone.TabIndex = 31;
+            this.tbTelephone.Location = new System.Drawing.Point(448, 43);
+            this.tbTelephone.Name = "tbTelephone";
+            this.tbTelephone.Size = new System.Drawing.Size(167, 20);
+            this.tbTelephone.TabIndex = 31;
             // 
             // lbTelephone
             // 
@@ -221,19 +196,19 @@
             this.lbTelephone.TabIndex = 30;
             this.lbTelephone.Text = "Telephone Number";
             // 
-            // txtLName
+            // tbLastName
             // 
-            this.txtLName.Location = new System.Drawing.Point(189, 43);
-            this.txtLName.Name = "txtLName";
-            this.txtLName.Size = new System.Drawing.Size(167, 20);
-            this.txtLName.TabIndex = 29;
+            this.tbLastName.Location = new System.Drawing.Point(189, 43);
+            this.tbLastName.Name = "tbLastName";
+            this.tbLastName.Size = new System.Drawing.Size(167, 20);
+            this.tbLastName.TabIndex = 29;
             // 
-            // txtFName
+            // tbFirstName
             // 
-            this.txtFName.Location = new System.Drawing.Point(16, 43);
-            this.txtFName.Name = "txtFName";
-            this.txtFName.Size = new System.Drawing.Size(167, 20);
-            this.txtFName.TabIndex = 28;
+            this.tbFirstName.Location = new System.Drawing.Point(16, 43);
+            this.tbFirstName.Name = "tbFirstName";
+            this.tbFirstName.Size = new System.Drawing.Size(167, 20);
+            this.tbFirstName.TabIndex = 28;
             // 
             // lbCustomerFName
             // 
@@ -244,11 +219,86 @@
             this.lbCustomerFName.TabIndex = 27;
             this.lbCustomerFName.Text = "Customer Name ";
             // 
+            // lbEmail
+            // 
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Location = new System.Drawing.Point(478, 87);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(73, 13);
+            this.lbEmail.TabIndex = 50;
+            this.lbEmail.Text = "Email Address";
+            // 
+            // tbEmailAddress
+            // 
+            this.tbEmailAddress.Location = new System.Drawing.Point(448, 103);
+            this.tbEmailAddress.Name = "tbEmailAddress";
+            this.tbEmailAddress.Size = new System.Drawing.Size(167, 20);
+            this.tbEmailAddress.TabIndex = 51;
+            // 
+            // cbResDescription
+            // 
+            this.cbResDescription.FormattingEnabled = true;
+            this.cbResDescription.Items.AddRange(new object[] {
+            "Dinner",
+            "Breakfast",
+            "Lunch",
+            "Party",
+            "Business"});
+            this.cbResDescription.Location = new System.Drawing.Point(12, 103);
+            this.cbResDescription.Name = "cbResDescription";
+            this.cbResDescription.Size = new System.Drawing.Size(121, 21);
+            this.cbResDescription.TabIndex = 52;
+            // 
+            // cbTableStatus
+            // 
+            this.cbTableStatus.FormattingEnabled = true;
+            this.cbTableStatus.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cbTableStatus.Location = new System.Drawing.Point(12, 166);
+            this.cbTableStatus.Name = "cbTableStatus";
+            this.cbTableStatus.Size = new System.Drawing.Size(121, 21);
+            this.cbTableStatus.TabIndex = 53;
+            // 
+            // cbResStatus
+            // 
+            this.cbResStatus.FormattingEnabled = true;
+            this.cbResStatus.Items.AddRange(new object[] {
+            "Pending",
+            "Booked",
+            "Canceled",
+            "Completed"});
+            this.cbResStatus.Location = new System.Drawing.Point(189, 167);
+            this.cbResStatus.Name = "cbResStatus";
+            this.cbResStatus.Size = new System.Drawing.Size(121, 21);
+            this.cbResStatus.TabIndex = 54;
+            // 
+            // dtpReservation
+            // 
+            this.dtpReservation.Location = new System.Drawing.Point(189, 113);
+            this.dtpReservation.Name = "dtpReservation";
+            this.dtpReservation.Size = new System.Drawing.Size(200, 20);
+            this.dtpReservation.TabIndex = 55;
+            // 
             // ReservationReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(936, 618);
+            this.Controls.Add(this.dtpReservation);
+            this.Controls.Add(this.cbResStatus);
+            this.Controls.Add(this.cbTableStatus);
+            this.Controls.Add(this.cbResDescription);
+            this.Controls.Add(this.tbEmailAddress);
+            this.Controls.Add(this.lbEmail);
             this.Controls.Add(this.btClearRes);
             this.Controls.Add(this.btDeleteRes);
             this.Controls.Add(this.btSaveRes);
@@ -256,25 +306,22 @@
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.lbReservationSearch);
             this.Controls.Add(this.txtSearchReservation);
-            this.Controls.Add(this.dataGridViewRes);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.gvUsers);
             this.Controls.Add(this.lnTableStatus);
-            this.Controls.Add(this.txtReservationDate);
             this.Controls.Add(this.lbReservationDate);
-            this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.lbResStatus);
-            this.Controls.Add(this.txtCusAddress);
+            this.Controls.Add(this.tbCusAddress);
             this.Controls.Add(this.lbCusAddress);
-            this.Controls.Add(this.txtReservations);
             this.Controls.Add(this.lbReservation);
-            this.Controls.Add(this.txtTelephone);
+            this.Controls.Add(this.tbTelephone);
             this.Controls.Add(this.lbTelephone);
-            this.Controls.Add(this.txtLName);
-            this.Controls.Add(this.txtFName);
+            this.Controls.Add(this.tbLastName);
+            this.Controls.Add(this.tbFirstName);
             this.Controls.Add(this.lbCustomerFName);
             this.Name = "ReservationReports";
             this.Text = "ReservationReports";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRes)).EndInit();
+            this.Load += new System.EventHandler(this.ReservationReports_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gvUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,21 +336,23 @@
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label lbReservationSearch;
         private System.Windows.Forms.TextBox txtSearchReservation;
-        private System.Windows.Forms.DataGridView dataGridViewRes;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView gvUsers;
         private System.Windows.Forms.Label lnTableStatus;
-        private System.Windows.Forms.TextBox txtReservationDate;
         private System.Windows.Forms.Label lbReservationDate;
-        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.Label lbResStatus;
-        private System.Windows.Forms.TextBox txtCusAddress;
+        private System.Windows.Forms.TextBox tbCusAddress;
         private System.Windows.Forms.Label lbCusAddress;
-        private System.Windows.Forms.TextBox txtReservations;
         private System.Windows.Forms.Label lbReservation;
-        private System.Windows.Forms.TextBox txtTelephone;
+        private System.Windows.Forms.TextBox tbTelephone;
         private System.Windows.Forms.Label lbTelephone;
-        private System.Windows.Forms.TextBox txtLName;
-        private System.Windows.Forms.TextBox txtFName;
+        private System.Windows.Forms.TextBox tbLastName;
+        private System.Windows.Forms.TextBox tbFirstName;
         private System.Windows.Forms.Label lbCustomerFName;
+        private System.Windows.Forms.Label lbEmail;
+        private System.Windows.Forms.TextBox tbEmailAddress;
+        private System.Windows.Forms.ComboBox cbResDescription;
+        private System.Windows.Forms.ComboBox cbTableStatus;
+        private System.Windows.Forms.ComboBox cbResStatus;
+        private System.Windows.Forms.DateTimePicker dtpReservation;
     }
 }

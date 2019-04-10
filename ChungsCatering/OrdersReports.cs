@@ -16,5 +16,10 @@ namespace ChungsUserManagement
         {
             InitializeComponent();
         }
+
+        private void FormMangOrders_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
