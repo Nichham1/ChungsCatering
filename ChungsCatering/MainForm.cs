@@ -17,12 +17,14 @@ namespace ChungsCatering
             InitializeComponent();
         }
 
+        
         Boolean isloggedin = false;
         Boolean isadmin = false;
         Boolean iscustomer = false;
 
         public void Adminloginshow()
         {
+
             AdminLoginForm adminlog = new AdminLoginForm();
             adminlog.MdiParent = this;
             adminlog.Show();
@@ -42,6 +44,8 @@ namespace ChungsCatering
 
         private void Order_Click(object sender, EventArgs e)
         {
+            var ctx = new ChungsDatabaseEntities1();
+
             if (iscustomer == false){
 
                 Userloginshow();
@@ -69,7 +73,7 @@ namespace ChungsCatering
 
         private void ReservationReports_Click_1(object sender, EventArgs e)
         {
-            ChungsUserManagement.ReservationReports reservationreport = new ChungsUserManagement.ReservationReports();
+            ChungsCatering.ReservationReports reservationreport = new ChungsCatering.ReservationReports();
             reservationreport.MdiParent = this;
             reservationreport.Show();
         }
