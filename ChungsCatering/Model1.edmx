@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ChungsDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ReservationDate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ReservationDescription">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ReservationStatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ReservationUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varbinary" MaxLength="50" />
+          <Property Name="CustomerAddress" Type="varbinary" MaxLength="50" />
+          <Property Name="Telephone" Type="varbinary" MaxLength="50" />
+          <Property Name="ReservationCreateDate" Type="datetime" />
+          <Property Name="SeatStatusID" Type="int" />
+          <Property Name="ReservationStatusID" Type="int" />
+          <Property Name="ReservationDescriptionID" Type="int" />
+          <Property Name="ReservationDateID" Type="int" />
+        </EntityType>
+        <EntityType Name="SeatStatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK_ReservationUser_ToTable">
+          <End Role="SeatStatus" Type="Self.SeatStatus" Multiplicity="0..1" />
+          <End Role="ReservationUser" Type="Self.ReservationUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SeatStatus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReservationUser">
+              <PropertyRef Name="SeatStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservationUser_ToTable_1">
+          <End Role="ReservationStatus" Type="Self.ReservationStatus" Multiplicity="0..1" />
+          <End Role="ReservationUser" Type="Self.ReservationUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReservationStatus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReservationUser">
+              <PropertyRef Name="ReservationStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservationUser_ToTable_2">
+          <End Role="ReservationDescription" Type="Self.ReservationDescription" Multiplicity="0..1" />
+          <End Role="ReservationUser" Type="Self.ReservationUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReservationDescription">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReservationUser">
+              <PropertyRef Name="ReservationDescriptionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservationUser_ToTable_3">
+          <End Role="ReservationDate" Type="Self.ReservationDate" Multiplicity="0..1" />
+          <End Role="ReservationUser" Type="Self.ReservationUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReservationDate">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReservationUser">
+              <PropertyRef Name="ReservationDateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ChungsDatabaseModelStoreContainer">
+          <EntitySet Name="ReservationDate" EntityType="Self.ReservationDate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReservationDescription" EntityType="Self.ReservationDescription" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReservationStatus" EntityType="Self.ReservationStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReservationUser" EntityType="Self.ReservationUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SeatStatus" EntityType="Self.SeatStatus" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ReservationUser_ToTable" Association="Self.FK_ReservationUser_ToTable">
+            <End Role="SeatStatus" EntitySet="SeatStatus" />
+            <End Role="ReservationUser" EntitySet="ReservationUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationUser_ToTable_1" Association="Self.FK_ReservationUser_ToTable_1">
+            <End Role="ReservationStatus" EntitySet="ReservationStatus" />
+            <End Role="ReservationUser" EntitySet="ReservationUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationUser_ToTable_2" Association="Self.FK_ReservationUser_ToTable_2">
+            <End Role="ReservationDescription" EntitySet="ReservationDescription" />
+            <End Role="ReservationUser" EntitySet="ReservationUser" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationUser_ToTable_3" Association="Self.FK_ReservationUser_ToTable_3">
+            <End Role="ReservationDate" EntitySet="ReservationDate" />
+            <End Role="ReservationUser" EntitySet="ReservationUser" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ChungsDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ReservationDate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ReservationUsers" Relationship="ChungsDatabaseModel.FK_ReservationUser_ToTable_3" FromRole="ReservationDate" ToRole="ReservationUser" />
+        </EntityType>
+        <EntityType Name="ReservationDescription">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ReservationUsers" Relationship="ChungsDatabaseModel.FK_ReservationUser_ToTable_2" FromRole="ReservationDescription" ToRole="ReservationUser" />
+        </EntityType>
+        <EntityType Name="ReservationStatu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ReservationUsers" Relationship="ChungsDatabaseModel.FK_ReservationUser_ToTable_1" FromRole="ReservationStatu" ToRole="ReservationUser" />
+        </EntityType>
+        <EntityType Name="ReservationUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" />
+          <Property Name="CustomerAddress" Type="String" MaxLength="50" FixedLength="false" />
+          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" />
+          <Property Name="ReservationDate" Type="DateTime" Precision="3" />
+          <Property Name="SeatStatusID" Type="Int32" />
+          <Property Name="ReservationStatusID" Type="Int32" />
+          <Property Name="ReservationDescriptionID" Type="Int32" />
+          <Property Name="ReservationDateID" Type="Int32" />
+          <NavigationProperty Name="ReservationDate1" Relationship="ChungsDatabaseModel.FK_ReservationUser_ToTable_3" FromRole="ReservationUser" ToRole="ReservationDate" />
+          <NavigationProperty Name="ReservationDescription" Relationship="ChungsDatabaseModel.FK_ReservationUser_ToTable_2" FromRole="ReservationUser" ToRole="ReservationDescription" />
+          <NavigationProperty Name="ReservationStatu" Relationship="ChungsDatabaseModel.FK_ReservationUser_ToTable_1" FromRole="ReservationUser" ToRole="ReservationStatu" />
+          <NavigationProperty Name="SeatStatu" Relationship="ChungsDatabaseModel.FK_ReservationUser_ToTable" FromRole="ReservationUser" ToRole="SeatStatu" />
+          <Property Name="ReservationCreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="SeatStatu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="ReservationUsers" Relationship="ChungsDatabaseModel.FK_ReservationUser_ToTable" FromRole="SeatStatu" ToRole="ReservationUser" />
+        </EntityType>
+        <EntityContainer Name="ChungsDatabaseEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ReservationDates" EntityType="Self.ReservationDate" />
+          <EntitySet Name="ReservationDescriptions" EntityType="Self.ReservationDescription" />
+          <EntitySet Name="ReservationStatus" EntityType="Self.ReservationStatu" />
+          <EntitySet Name="ReservationUsers" EntityType="Self.ReservationUser" />
+          <EntitySet Name="SeatStatus" EntityType="Self.SeatStatu" />
+          <AssociationSet Name="FK_ReservationUser_ToTable_3" Association="ChungsDatabaseModel.FK_ReservationUser_ToTable_3">
+            <End Role="ReservationDate" EntitySet="ReservationDates" />
+            <End Role="ReservationUser" EntitySet="ReservationUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationUser_ToTable_2" Association="ChungsDatabaseModel.FK_ReservationUser_ToTable_2">
+            <End Role="ReservationDescription" EntitySet="ReservationDescriptions" />
+            <End Role="ReservationUser" EntitySet="ReservationUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationUser_ToTable_1" Association="ChungsDatabaseModel.FK_ReservationUser_ToTable_1">
+            <End Role="ReservationStatu" EntitySet="ReservationStatus" />
+            <End Role="ReservationUser" EntitySet="ReservationUsers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReservationUser_ToTable" Association="ChungsDatabaseModel.FK_ReservationUser_ToTable">
+            <End Role="SeatStatu" EntitySet="SeatStatus" />
+            <End Role="ReservationUser" EntitySet="ReservationUsers" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK_ReservationUser_ToTable_3">
+          <End Type="ChungsDatabaseModel.ReservationDate" Role="ReservationDate" Multiplicity="0..1" />
+          <End Type="ChungsDatabaseModel.ReservationUser" Role="ReservationUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReservationDate">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReservationUser">
+              <PropertyRef Name="ReservationDateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservationUser_ToTable_2">
+          <End Type="ChungsDatabaseModel.ReservationDescription" Role="ReservationDescription" Multiplicity="0..1" />
+          <End Type="ChungsDatabaseModel.ReservationUser" Role="ReservationUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReservationDescription">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReservationUser">
+              <PropertyRef Name="ReservationDescriptionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservationUser_ToTable_1">
+          <End Type="ChungsDatabaseModel.ReservationStatu" Role="ReservationStatu" Multiplicity="0..1" />
+          <End Type="ChungsDatabaseModel.ReservationUser" Role="ReservationUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReservationStatu">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReservationUser">
+              <PropertyRef Name="ReservationStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReservationUser_ToTable">
+          <End Type="ChungsDatabaseModel.SeatStatu" Role="SeatStatu" Multiplicity="0..1" />
+          <End Type="ChungsDatabaseModel.ReservationUser" Role="ReservationUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SeatStatu">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ReservationUser">
+              <PropertyRef Name="SeatStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ChungsDatabaseModelStoreContainer" CdmEntityContainer="ChungsDatabaseEntities1">
+          <EntitySetMapping Name="ReservationDates">
+            <EntityTypeMapping TypeName="ChungsDatabaseModel.ReservationDate">
+              <MappingFragment StoreEntitySet="ReservationDate">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReservationDescriptions">
+            <EntityTypeMapping TypeName="ChungsDatabaseModel.ReservationDescription">
+              <MappingFragment StoreEntitySet="ReservationDescription">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReservationStatus">
+            <EntityTypeMapping TypeName="ChungsDatabaseModel.ReservationStatu">
+              <MappingFragment StoreEntitySet="ReservationStatus">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReservationUsers">
+            <EntityTypeMapping TypeName="ChungsDatabaseModel.ReservationUser">
+              <MappingFragment StoreEntitySet="ReservationUser">
+                <ScalarProperty Name="ReservationCreateDate" ColumnName="ReservationCreateDate" />
+                <ScalarProperty Name="ReservationDateID" ColumnName="ReservationDateID" />
+                <ScalarProperty Name="ReservationDescriptionID" ColumnName="ReservationDescriptionID" />
+                <ScalarProperty Name="ReservationStatusID" ColumnName="ReservationStatusID" />
+                <ScalarProperty Name="SeatStatusID" ColumnName="SeatStatusID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CustomerAddress" ColumnName="CustomerAddress" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SeatStatus">
+            <EntityTypeMapping TypeName="ChungsDatabaseModel.SeatStatu">
+              <MappingFragment StoreEntitySet="SeatStatus">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
