@@ -70,6 +70,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChungsDatabaseDataSet.cs">
+      <DependentUpon>ChungsDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ChungsDatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

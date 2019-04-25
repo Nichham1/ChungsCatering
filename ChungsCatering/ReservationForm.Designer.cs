@@ -54,12 +54,12 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(178, 50);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(108, 26);
             // 
             // homeToolStripMenuItem
             // 
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(177, 46);
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.homeToolStripMenuItem.Text = "Home";
             // 
             // label1
@@ -69,9 +69,10 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label1.Font = new System.Drawing.Font("Harrington", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(642, 25);
+            this.label1.Location = new System.Drawing.Point(241, 10);
+            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(512, 71);
+            this.label1.Size = new System.Drawing.Size(219, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Reservation Form";
             // 
@@ -80,16 +81,18 @@
             this.panel1.Controls.Add(this.btnReservation);
             this.panel1.Controls.Add(this.flowLayoutPanel);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(360, 141);
+            this.panel1.Location = new System.Drawing.Point(135, 59);
+            this.panel1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1617, 751);
+            this.panel1.Size = new System.Drawing.Size(606, 315);
             this.panel1.TabIndex = 1;
             // 
             // btnReservation
             // 
-            this.btnReservation.Location = new System.Drawing.Point(730, 598);
+            this.btnReservation.Location = new System.Drawing.Point(274, 251);
+            this.btnReservation.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.btnReservation.Name = "btnReservation";
-            this.btnReservation.Size = new System.Drawing.Size(283, 60);
+            this.btnReservation.Size = new System.Drawing.Size(106, 25);
             this.btnReservation.TabIndex = 2;
             this.btnReservation.Text = "Make Reservation";
             this.btnReservation.UseVisualStyleBackColor = true;
@@ -105,9 +108,10 @@
             this.flowLayoutPanel.Controls.Add(this.tbNumberofPeople);
             this.flowLayoutPanel.Controls.Add(this.dateTimePicker1);
             this.flowLayoutPanel.Controls.Add(this.tbEvent);
-            this.flowLayoutPanel.Location = new System.Drawing.Point(339, 155);
+            this.flowLayoutPanel.Location = new System.Drawing.Point(127, 65);
+            this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(990, 405);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(374, 172);
             this.flowLayoutPanel.TabIndex = 1;
             // 
             // tbFirstName
@@ -117,9 +121,10 @@
             this.tbFirstName.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbFirstName.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.tbFirstName.Location = new System.Drawing.Point(3, 3);
+            this.tbFirstName.Location = new System.Drawing.Point(1, 1);
+            this.tbFirstName.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.tbFirstName.Name = "tbFirstName";
-            this.tbFirstName.Size = new System.Drawing.Size(982, 45);
+            this.tbFirstName.Size = new System.Drawing.Size(371, 23);
             this.tbFirstName.TabIndex = 0;
             this.tbFirstName.Tag = "";
             this.tbFirstName.Text = "First Name";
@@ -133,9 +138,10 @@
             this.tbLastName.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbLastName.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.tbLastName.Location = new System.Drawing.Point(3, 54);
+            this.tbLastName.Location = new System.Drawing.Point(1, 26);
+            this.tbLastName.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.tbLastName.Name = "tbLastName";
-            this.tbLastName.Size = new System.Drawing.Size(982, 45);
+            this.tbLastName.Size = new System.Drawing.Size(371, 23);
             this.tbLastName.TabIndex = 0;
             this.tbLastName.Tag = "";
             this.tbLastName.Text = "Last Name";
@@ -148,9 +154,10 @@
             this.tbEmail.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEmail.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.tbEmail.Location = new System.Drawing.Point(3, 105);
+            this.tbEmail.Location = new System.Drawing.Point(1, 51);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(982, 45);
+            this.tbEmail.Size = new System.Drawing.Size(371, 23);
             this.tbEmail.TabIndex = 0;
             this.tbEmail.Tag = "";
             this.tbEmail.Text = "somoene@example.com";
@@ -163,9 +170,10 @@
             this.TbPhone.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.TbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbPhone.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.TbPhone.Location = new System.Drawing.Point(3, 156);
+            this.TbPhone.Location = new System.Drawing.Point(1, 76);
+            this.TbPhone.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.TbPhone.Name = "TbPhone";
-            this.TbPhone.Size = new System.Drawing.Size(982, 45);
+            this.TbPhone.Size = new System.Drawing.Size(371, 23);
             this.TbPhone.TabIndex = 0;
             this.TbPhone.Tag = "";
             this.TbPhone.Text = "Phone Number (***) - (***) - (****)";
@@ -178,9 +186,10 @@
             this.tbNumberofPeople.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbNumberofPeople.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNumberofPeople.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.tbNumberofPeople.Location = new System.Drawing.Point(3, 207);
+            this.tbNumberofPeople.Location = new System.Drawing.Point(1, 101);
+            this.tbNumberofPeople.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.tbNumberofPeople.Name = "tbNumberofPeople";
-            this.tbNumberofPeople.Size = new System.Drawing.Size(982, 45);
+            this.tbNumberofPeople.Size = new System.Drawing.Size(371, 23);
             this.tbNumberofPeople.TabIndex = 0;
             this.tbNumberofPeople.Tag = "";
             this.tbNumberofPeople.Text = "Number of People";
@@ -189,9 +198,10 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dateTimePicker1.Location = new System.Drawing.Point(3, 258);
+            this.dateTimePicker1.Location = new System.Drawing.Point(1, 126);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(982, 38);
+            this.dateTimePicker1.Size = new System.Drawing.Size(371, 20);
             this.dateTimePicker1.TabIndex = 1;
             this.dateTimePicker1.Tag = "Please enter date";
             // 
@@ -202,9 +212,10 @@
             this.tbEvent.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tbEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEvent.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.tbEvent.Location = new System.Drawing.Point(3, 302);
+            this.tbEvent.Location = new System.Drawing.Point(1, 148);
+            this.tbEvent.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.tbEvent.Name = "tbEvent";
-            this.tbEvent.Size = new System.Drawing.Size(982, 45);
+            this.tbEvent.Size = new System.Drawing.Size(371, 23);
             this.tbEvent.TabIndex = 0;
             this.tbEvent.Tag = "";
             this.tbEvent.Text = "Select Event";
@@ -212,12 +223,13 @@
             // 
             // ReservationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(2120, 1037);
+            this.ClientSize = new System.Drawing.Size(903, 449);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "ReservationForm";
             this.Text = "ReservationForm";
             this.contextMenuStrip1.ResumeLayout(false);

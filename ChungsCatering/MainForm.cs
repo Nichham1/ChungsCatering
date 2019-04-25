@@ -73,9 +73,8 @@ namespace ChungsCatering
 
         private void ReservationReports_Click_1(object sender, EventArgs e)
         {
-            ChungsCatering.ReservationReports reservationreport = new ChungsCatering.ReservationReports();
-            reservationreport.MdiParent = this;
-            reservationreport.Show();
+                  
+            
         }
     }
 }
