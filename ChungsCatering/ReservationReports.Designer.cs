@@ -51,23 +51,31 @@
             this.lbEmail = new System.Windows.Forms.Label();
             this.tbEmailAddress = new System.Windows.Forms.TextBox();
             this.cbResDescription = new System.Windows.Forms.ComboBox();
+            this.reservationDescriptionBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.chungCateringDatabase2DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.chungCateringDatabase2DataSet = new ChungsCatering.ChungCateringDatabase2DataSet();
             this.reservationDescriptionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.chungsDatabaseDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.chungsDatabaseDataSet = new ChungsCatering.ChungsDatabaseDataSet();
             this.cbSeatStatus = new System.Windows.Forms.ComboBox();
             this.cbResStatus = new System.Windows.Forms.ComboBox();
-            this.dtpReservation = new System.Windows.Forms.DateTimePicker();
-            this.reservationDescriptionTableAdapter = new ChungsCatering.ChungsDatabaseDataSetTableAdapters.ReservationDescriptionTableAdapter();
             this.reservationStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reservationStatusTableAdapter = new ChungsCatering.ChungsDatabaseDataSetTableAdapters.ReservationStatusTableAdapter();
-            this.seatStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.seatStatusTableAdapter = new ChungsCatering.ChungsDatabaseDataSetTableAdapters.SeatStatusTableAdapter();
+            this.dtpReservation = new System.Windows.Forms.DateTimePicker();
+            this.reservationDescriptionTableAdapter = new ChungsCatering.ChungCateringDatabase2DataSetTableAdapters.ReservationDescriptionTableAdapter();
+            this.reservationStatusBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.reservationStatusTableAdapter = new ChungsCatering.ChungCateringDatabase2DataSetTableAdapters.ReservationStatusTableAdapter();
+            this.reservationUserBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reservationUserTableAdapter = new ChungsCatering.ChungCateringDatabase2DataSetTableAdapters.ReservationUserTableAdapter();
+            this.reservationUserBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.reservationUserBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gvUsers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationDescriptionBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chungCateringDatabase2DataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chungCateringDatabase2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationDescriptionBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chungsDatabaseDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chungsDatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationStatusBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seatStatusBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationStatusBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationUserBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationUserBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationUserBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // lbCustomerFName
@@ -252,7 +260,8 @@
             // 
             // cbResDescription
             // 
-            this.cbResDescription.DataSource = this.reservationDescriptionBindingSource;
+            this.cbResDescription.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.reservationDescriptionBindingSource1, "Id", true));
+            this.cbResDescription.DataSource = this.reservationDescriptionBindingSource1;
             this.cbResDescription.DisplayMember = "Name";
             this.cbResDescription.FormattingEnabled = true;
             this.cbResDescription.Location = new System.Drawing.Point(16, 100);
@@ -261,35 +270,46 @@
             this.cbResDescription.TabIndex = 52;
             this.cbResDescription.ValueMember = "Id";
             // 
+            // reservationDescriptionBindingSource1
+            // 
+            this.reservationDescriptionBindingSource1.DataMember = "ReservationDescription";
+            this.reservationDescriptionBindingSource1.DataSource = this.chungCateringDatabase2DataSetBindingSource;
+            // 
+            // chungCateringDatabase2DataSetBindingSource
+            // 
+            this.chungCateringDatabase2DataSetBindingSource.DataSource = this.chungCateringDatabase2DataSet;
+            this.chungCateringDatabase2DataSetBindingSource.Position = 0;
+            // 
+            // chungCateringDatabase2DataSet
+            // 
+            this.chungCateringDatabase2DataSet.DataSetName = "ChungCateringDatabase2DataSet";
+            this.chungCateringDatabase2DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // reservationDescriptionBindingSource
             // 
             this.reservationDescriptionBindingSource.DataMember = "ReservationDescription";
-            this.reservationDescriptionBindingSource.DataSource = this.chungsDatabaseDataSetBindingSource;
-            // 
-            // chungsDatabaseDataSetBindingSource
-            // 
-            this.chungsDatabaseDataSetBindingSource.DataSource = this.chungsDatabaseDataSet;
-            this.chungsDatabaseDataSetBindingSource.Position = 0;
-            // 
-            // chungsDatabaseDataSet
-            // 
-            this.chungsDatabaseDataSet.DataSetName = "ChungsDatabaseDataSet";
-            this.chungsDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // cbSeatStatus
             // 
-            this.cbSeatStatus.DataSource = this.seatStatusBindingSource;
-            this.cbSeatStatus.DisplayMember = "Name";
             this.cbSeatStatus.FormattingEnabled = true;
+            this.cbSeatStatus.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"});
             this.cbSeatStatus.Location = new System.Drawing.Point(302, 100);
             this.cbSeatStatus.Name = "cbSeatStatus";
             this.cbSeatStatus.Size = new System.Drawing.Size(121, 21);
             this.cbSeatStatus.TabIndex = 53;
-            this.cbSeatStatus.ValueMember = "Id";
             // 
             // cbResStatus
             // 
-            this.cbResStatus.DataSource = this.reservationStatusBindingSource;
+            this.cbResStatus.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.reservationStatusBindingSource, "Id", true));
+            this.cbResStatus.DataSource = this.reservationStatusBindingSource1;
             this.cbResStatus.DisplayMember = "Name";
             this.cbResStatus.FormattingEnabled = true;
             this.cbResStatus.Location = new System.Drawing.Point(163, 100);
@@ -297,6 +317,10 @@
             this.cbResStatus.Size = new System.Drawing.Size(121, 21);
             this.cbResStatus.TabIndex = 54;
             this.cbResStatus.ValueMember = "Id";
+            // 
+            // reservationStatusBindingSource
+            // 
+            this.reservationStatusBindingSource.DataMember = "ReservationStatus";
             // 
             // dtpReservation
             // 
@@ -309,23 +333,33 @@
             // 
             this.reservationDescriptionTableAdapter.ClearBeforeFill = true;
             // 
-            // reservationStatusBindingSource
+            // reservationStatusBindingSource1
             // 
-            this.reservationStatusBindingSource.DataMember = "ReservationStatus";
-            this.reservationStatusBindingSource.DataSource = this.chungsDatabaseDataSetBindingSource;
+            this.reservationStatusBindingSource1.DataMember = "ReservationStatus";
+            this.reservationStatusBindingSource1.DataSource = this.chungCateringDatabase2DataSetBindingSource;
             // 
             // reservationStatusTableAdapter
             // 
             this.reservationStatusTableAdapter.ClearBeforeFill = true;
             // 
-            // seatStatusBindingSource
+            // reservationUserBindingSource
             // 
-            this.seatStatusBindingSource.DataMember = "SeatStatus";
-            this.seatStatusBindingSource.DataSource = this.chungsDatabaseDataSetBindingSource;
+            this.reservationUserBindingSource.DataMember = "ReservationUser";
+            this.reservationUserBindingSource.DataSource = this.chungCateringDatabase2DataSetBindingSource;
             // 
-            // seatStatusTableAdapter
+            // reservationUserTableAdapter
             // 
-            this.seatStatusTableAdapter.ClearBeforeFill = true;
+            this.reservationUserTableAdapter.ClearBeforeFill = true;
+            // 
+            // reservationUserBindingSource1
+            // 
+            this.reservationUserBindingSource1.DataMember = "ReservationUser";
+            this.reservationUserBindingSource1.DataSource = this.chungCateringDatabase2DataSetBindingSource;
+            // 
+            // reservationUserBindingSource2
+            // 
+            this.reservationUserBindingSource2.DataMember = "ReservationUser";
+            this.reservationUserBindingSource2.DataSource = this.chungCateringDatabase2DataSetBindingSource;
             // 
             // ReservationReports
             // 
@@ -361,11 +395,15 @@
             this.Text = "ReservationReports";
             this.Load += new System.EventHandler(this.ReservationReports_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvUsers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationDescriptionBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chungCateringDatabase2DataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chungCateringDatabase2DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationDescriptionBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chungsDatabaseDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chungsDatabaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reservationStatusBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.seatStatusBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationStatusBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationUserBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationUserBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reservationUserBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,13 +436,20 @@
         private System.Windows.Forms.ComboBox cbSeatStatus;
         private System.Windows.Forms.ComboBox cbResStatus;
         private System.Windows.Forms.DateTimePicker dtpReservation;
-        private System.Windows.Forms.BindingSource chungsDatabaseDataSetBindingSource;
-        private ChungsDatabaseDataSet chungsDatabaseDataSet;
+        
         private System.Windows.Forms.BindingSource reservationDescriptionBindingSource;
-        private ChungsDatabaseDataSetTableAdapters.ReservationDescriptionTableAdapter reservationDescriptionTableAdapter;
+        
+        
         private System.Windows.Forms.BindingSource reservationStatusBindingSource;
-        private ChungsDatabaseDataSetTableAdapters.ReservationStatusTableAdapter reservationStatusTableAdapter;
-        private System.Windows.Forms.BindingSource seatStatusBindingSource;
-        private ChungsDatabaseDataSetTableAdapters.SeatStatusTableAdapter seatStatusTableAdapter;
+        private System.Windows.Forms.BindingSource chungCateringDatabase2DataSetBindingSource;
+        private ChungCateringDatabase2DataSet chungCateringDatabase2DataSet;
+        private System.Windows.Forms.BindingSource reservationDescriptionBindingSource1;
+        private ChungCateringDatabase2DataSetTableAdapters.ReservationDescriptionTableAdapter reservationDescriptionTableAdapter;
+        private System.Windows.Forms.BindingSource reservationStatusBindingSource1;
+        private ChungCateringDatabase2DataSetTableAdapters.ReservationStatusTableAdapter reservationStatusTableAdapter;
+        private System.Windows.Forms.BindingSource reservationUserBindingSource;
+        private ChungCateringDatabase2DataSetTableAdapters.ReservationUserTableAdapter reservationUserTableAdapter;
+        private System.Windows.Forms.BindingSource reservationUserBindingSource1;
+        private System.Windows.Forms.BindingSource reservationUserBindingSource2;
     }
 }
