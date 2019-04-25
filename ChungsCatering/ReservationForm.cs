@@ -16,5 +16,15 @@ namespace ChungsCatering
         {
             InitializeComponent();
         }
+
+        private void TbFirstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TbFirstName_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
