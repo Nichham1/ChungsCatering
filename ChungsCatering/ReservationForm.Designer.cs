@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReservationForm));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,12 +65,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Font = new System.Drawing.Font("Harrington", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Harrington", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.Location = new System.Drawing.Point(642, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(409, 55);
+            this.label1.Size = new System.Drawing.Size(512, 71);
             this.label1.TabIndex = 0;
             this.label1.Text = "Reservation Form";
             // 
@@ -78,7 +80,7 @@
             this.panel1.Controls.Add(this.btnReservation);
             this.panel1.Controls.Add(this.flowLayoutPanel);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(157, 57);
+            this.panel1.Location = new System.Drawing.Point(360, 141);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1617, 751);
             this.panel1.TabIndex = 1;
@@ -94,6 +96,7 @@
             // 
             // flowLayoutPanel
             // 
+            this.flowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flowLayoutPanel.Controls.Add(this.tbFirstName);
             this.flowLayoutPanel.Controls.Add(this.tbLastName);
@@ -121,6 +124,7 @@
             this.tbFirstName.Tag = "";
             this.tbFirstName.Text = "First Name";
             this.tbFirstName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbFirstName.DoubleClick += new System.EventHandler(this.TbFirstName_DoubleClick);
             // 
             // tbLastName
             // 
@@ -210,7 +214,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2470, 883);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(2120, 1037);
             this.Controls.Add(this.panel1);
             this.Name = "ReservationForm";
             this.Text = "ReservationForm";
