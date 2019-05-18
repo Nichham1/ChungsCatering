@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a5e01fbb521f4de09cb2a0bfb489fccf" Name="Diagram1">
+        <EntityTypeShape EntityType="ChungCateringDatabase2Model.ReservationUser" Width="2.75" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChungCateringDatabase2Model.ReservationDescription" Width="2.75" PointX="6.625" PointY="2.375" />
+        <EntityTypeShape EntityType="ChungCateringDatabase2Model.ReservationStatu" Width="1.5" PointX="3" PointY="4.875" />
+        <AssociationConnector Association="ChungCateringDatabase2Model.FK_ReservationUser_ReservationDescription" />
+        <AssociationConnector Association="ChungCateringDatabase2Model.FK_ReservationUser_ReservationStatus" />
+        <AssociationConnector Association="ChungCateringDatabase2Model.FK_ReservationUser_ReservationDescription1" />
+        <AssociationConnector Association="ChungCateringDatabase2Model.FK_ReservationUser_ReservationStatus1" />
+        <EntityTypeShape EntityType="ChungCateringDatabase2Model.Order" Width="1.5" PointX="5.5" PointY="8.25" />
+        <EntityTypeShape EntityType="ChungCateringDatabase2Model.ReservationReport" Width="1.5" PointX="7.75" PointY="5.5" />
+        <EntityTypeShape EntityType="ChungCateringDatabase2Model.User" Width="1.5" PointX="3.25" PointY="1" />
+        <AssociationConnector Association="ChungCateringDatabase2Model.FK_Orders_ID" />
+        <AssociationConnector Association="ChungCateringDatabase2Model.FK_ReservationReport_Orders" />
+        <AssociationConnector Association="ChungCateringDatabase2Model.FK_Users_Orders" />
+        <AssociationConnector Association="ChungCateringDatabase2Model.FK_ReservationReport_ReservationStatus" />
+        <AssociationConnector Association="ChungCateringDatabase2Model.FK_ReservationReport_Users" />
+        <AssociationConnector Association="ChungCateringDatabase2Model.FK_Users_ReservationUser" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

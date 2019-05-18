@@ -192,7 +192,7 @@
             // 
             this.lbOrderSearch.AutoSize = true;
             this.lbOrderSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbOrderSearch.Location = new System.Drawing.Point(584, 180);
+            this.lbOrderSearch.Location = new System.Drawing.Point(593, 180);
             this.lbOrderSearch.Name = "lbOrderSearch";
             this.lbOrderSearch.Size = new System.Drawing.Size(140, 25);
             this.lbOrderSearch.TabIndex = 17;

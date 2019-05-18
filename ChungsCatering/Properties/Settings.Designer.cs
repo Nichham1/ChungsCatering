@@ -33,5 +33,16 @@ namespace ChungsCatering.Properties {
                 return ((string)(this["ChungsDatabaseConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\ProjectsV13;Initial Catalog=ChungCateringDatabase2;Integrat" +
+            "ed Security=True")]
+        public string ChungCateringDatabase2ConnectionString {
+            get {
+                return ((string)(this["ChungCateringDatabase2ConnectionString"]));
+            }
+        }
     }
 }

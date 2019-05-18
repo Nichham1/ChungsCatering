@@ -44,7 +44,7 @@ namespace ChungsCatering
 
         private void Order_Click(object sender, EventArgs e)
         {
-            var ctx = new ChungsDatabaseEntities1();
+            var ctx = new ChungCateringDatabase2Entities();
 
             if (iscustomer == false){
 
@@ -59,22 +59,12 @@ namespace ChungsCatering
 
         }
 
-        private void Reservation_Click(object sender, EventArgs e)
-        {
-            ReservationForm reservation = new ReservationForm();
-            reservation.MdiParent = this;
-            reservation.Show();
-        }
-
-        private void ReservationReports_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void ReservationReports_Click_1(object sender, EventArgs e)
         {
-                  
-            
+            ReservationReports reservationreport = new ReservationReports();
+            reservationreport.MdiParent = this;
+            reservationreport.Show();
         }
     }
 }

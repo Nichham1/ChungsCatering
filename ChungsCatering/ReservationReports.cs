@@ -12,7 +12,8 @@ namespace ChungsCatering
 {
     public partial class ReservationReports : Form
     {
-        private ChungsDatabaseEntities1 _dbContext;
+        private ChungCateringDatabase2Entities rawdata;
+        
         public ReservationReports()
         {
             InitializeComponent();
@@ -21,24 +22,48 @@ namespace ChungsCatering
 
         private void ReservationReports_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'chungCateringDatabase2DataSet.ReservationUser' table. You can move, or remove it, as needed.
+            this.reservationUserTableAdapter.Fill(this.chungCateringDatabase2DataSet.ReservationUser);
+            // TODO: This line of code loads data into the 'chungCateringDatabase2DataSet.ReservationStatus' table. You can move, or remove it, as needed.
+            this.reservationStatusTableAdapter.Fill(this.chungCateringDatabase2DataSet.ReservationStatus);
+            // TODO: This line of code loads data into the 'chungCateringDatabase2DataSet.ReservationDescription' table. You can move, or remove it, as needed.
+            this.reservationDescriptionTableAdapter.Fill(this.chungCateringDatabase2DataSet.ReservationDescription);
+            // TODO: This line of code loads data into the 'chungCateringDatabase2DataSet1.ReservationStatus' table. You can move, or remove it, as needed.
+            //this.reservationStatusTableAdapter.Fill(this.chungCateringDatabase2DataSet1.ReservationStatus);
+            // TODO: This line of code loads data into the 'chungCateringDatabase2DataSet.ReservationDescription' table. You can move, or remove it, as needed.
+            //this.reservationDescriptionTableAdapter.Fill(this.chungCateringDatabase2DataSet.ReservationDescription);
+            /*
+            // TODO: This line of code loads data into the 'chungCateringDatabase2DataSet2.ReservationStatus' table. You can move, or remove it, as needed.
+            this.reservationStatusTableAdapter.Fill(this.chungCateringDatabase2DataSet2.ReservationStatus);
+            // TODO: This line of code loads data into the 'chungCateringDatabase2DataSet1.ReservationDescription' table. You can move, or remove it, as needed.
+            this.reservationDescriptionTableAdapter.Fill(this.chungCateringDatabase2DataSet1.ReservationDescription);
+            // TODO: This line of code loads data into the 'chungCateringDatabase2DataSet.ReservationDescription' table. You can move, or remove it, as needed.
+            this.reservationDescriptionTableAdapter.Fill(this.chungCateringDatabase2DataSet.ReservationDescription);
             // TODO: This line of code loads data into the 'chungsDatabaseDataSet.SeatStatus' table. You can move, or remove it, as needed.
             this.seatStatusTableAdapter.Fill(this.chungsDatabaseDataSet.SeatStatus);
             // TODO: This line of code loads data into the 'chungsDatabaseDataSet.ReservationStatus' table. You can move, or remove it, as needed.
             this.reservationStatusTableAdapter.Fill(this.chungsDatabaseDataSet.ReservationStatus);
             // TODO: This line of code loads data into the 'chungsDatabaseDataSet.ReservationDescription' table. You can move, or remove it, as needed.
             this.reservationDescriptionTableAdapter.Fill(this.chungsDatabaseDataSet.ReservationDescription);
+            */
             try
             {
+                rawdata = new ChungCateringDatabase2Entities();
+
                 //Populate the Gender Dropdown
                 //Get The Reservation Status from the database
-                var restate = _dbContext.ReservationStatus.ToList();
-                var redescrip = _dbContext.ReservationDescriptions.ToList();
-                var seat = _dbContext.SeatStatus.ToList();
+                var restate = rawdata.ReservationStatus.ToList();
+                var redescrip = rawdata.ReservationDescriptions.ToList();
+                //var seat = rawdata.SeatStatus.ToList();
                 //Set the datasource of the combobox to the records
                 //being retrieved from the database
                 cbResStatus.DataSource = restate;
                 cbResDescription.DataSource = redescrip;
-                cbSeatStatus.DataSource = seat;
+
+                //cbSeatStatus.DataSource = seat;
+
+
+
                 //Set the data member and value member to the values
                 //that correspond with the columns coming back from 
                 //our data source. 
@@ -80,35 +105,9 @@ namespace ChungsCatering
                     //throw ex;
                    }
       
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
 
-        private void BtClearRes_Click(object sender, EventArgs e)
-        {
-            ResetForm();
-        }
-
-
-
-
-
-
-
-
-
+    
         private void BtSaveRes_Click_1(object sender, EventArgs e)
         {
             //try {...} catch {...} is how you handle exceptions. I t is always a good idea to wrap complex operations inside
@@ -120,28 +119,29 @@ namespace ChungsCatering
             var email = tbEmailAddress.Text;
             var cust = tbCusAddress.Text;
             var telephone = tbTelephone.Text;
-            var resDescription = Convert.ToInt32(cbResDescription.SelectedValue);
-            var resStatus = Convert.ToInt32(cbResStatus.SelectedValue);
-            var seatStatus = Convert.ToInt32(cbSeatStatus.SelectedValue);
+            var ReservationDescription = Convert.ToInt32(cbResDescription.SelectedValue);
+            var ReservationStatus = Convert.ToInt32(cbResStatus.SelectedValue);
+           // var seatStatus = Convert.ToInt32(cbSeatStatus.SelectedValue);
             //var resDate = Convert.ToInt32(dtpReservation.DataBindings);
 
 
-            var user = new ChungsCatering.ReservationUser
+            var user = new ReservationUser
             {
                 FirstName = fname,
                 LastName = lname,
+                              
                 Email = email,
-                CustomerAddress = cust,
+               //CustomerAddress = cust,
                 Telephone = telephone,
                 ReservationDescriptionID = resDescription,
-                ReservationStatusID = resStatus,
-                SeatStatusID = seatStatus,
-                ReservationCreateDate = DateTime.Now,
+                ReservationStatusID= resStatus,
+               //SeatStatusID = seatStatus,
+               //ReservationCreateDate = DateTime.Now,
               //  ReservationDateID = DataBindings.Equals(resDate)
             };
-
-            _dbContext.ReservationUsers.Add(user);
-            _dbContext.SaveChanges();
+            
+            _ = rawdata.ReservationUsers.Add(user);
+            _ = rawdata.SaveChanges();
 
             //Functions to Reset the fields to blank and reload all the data in the GridView
             //The reload makes the changes appear near real-time.
@@ -150,42 +150,33 @@ namespace ChungsCatering
         }
 
 
-
-
-
-
-
-
-
         
+        private void BtClearRes_Click(object sender, EventArgs e)
+        {
+            ResetForm();
+        }
+
+
+          
         void RefreshGridView()
         {
-            var users = _dbContext.ReservationUsers.Select(q => new {
+            var users = rawdata.ReservationUsers. Select(q => new {
                 q.Id,
                 q.FirstName,
                 q.LastName,
-                q.CustomerAddress,
+                //q.CustomerAddress,
                 q.Telephone,
-                q.ReservationDescription,
+                q.ReservationDescriptionID,
                 q.ReservationStatusID,
-                q.SeatStatusID,
-                q.Email,
-                q.ReservationCreateDate.Date.Hour
+                q.Email
+                //q.ReservationCreateDate.Date.Hour
 
             }).ToList();
             gvUsers.DataSource = users;
             gvUsers.Refresh();
+
+            //rawdata.ReservationDescriptions.First(q => q.)
         }
-        
-
-
-
-
-
-
-
-
-
 
         void ResetForm()
         {
@@ -201,15 +192,15 @@ namespace ChungsCatering
 
         bool isFormInvalid()
         {
-            return String.IsNullOrEmpty(tbEmailAddress.Text) || String.IsNullOrEmpty(tbTelephone.Text) || cbSeatStatus.SelectedItem == null || cbResStatus.SelectedItem == null;
+            return String.IsNullOrEmpty(tbEmailAddress.Text) || String.IsNullOrEmpty(tbTelephone.Text) || cbResStatus.SelectedItem == null;
         }
 
         bool CheckEmail(string email)
         {
-            var emailExists = _dbContext.ReservationUsers.Any(q => q.Email.Trim() == email.Trim());
+            var emailExists = rawdata.ReservationUsers.Any(q => q.Email.Trim() == email.Trim());
             return emailExists;
         }
-
+/*
         private void FillByToolStripButton_Click(object sender, EventArgs e)
         {
             try
@@ -222,6 +213,7 @@ namespace ChungsCatering
             }
 
         }
+        */
     }
 
         }

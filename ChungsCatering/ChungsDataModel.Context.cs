@@ -10,14 +10,13 @@
 namespace ChungsCatering
 {
     using System;
-    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
-    public partial class ChungsDatabaseEntities1 : DbContext
+    
+    public partial class ChungCateringDatabase2Entities : DbContext
     {
-        public ChungsDatabaseEntities1()
-            : base("name=ChungsDatabaseEntities1")
+        public ChungCateringDatabase2Entities()
+            : base("name=ChungCateringDatabase2Entities")
         {
         }
     
@@ -26,11 +25,8 @@ namespace ChungsCatering
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ReservationDate> ReservationDates { get; set; }
         public virtual DbSet<ReservationDescription> ReservationDescriptions { get; set; }
         public virtual DbSet<ReservationStatu> ReservationStatus { get; set; }
         public virtual DbSet<ReservationUser> ReservationUsers { get; set; }
-        public virtual DbSet<SeatStatu> SeatStatus { get; set; }
-        public IEnumerable<object> ReservationUser { get; internal set; }
     }
 }
